@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 class="text-center">Book List</h2>
+    <div class="list-box" style="display: flex; border: 5px solid black; padding: 1rem;">
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users" style="height: 5rem;">
+                    <td> {{ user.title }} </td>
+                    <td> {{ user.author }} </td>
+                    <td> {{ user.description }} </td>
+                    <td class="btn-container">
+                        <button (click) = "updateUser(user.id)" class="btn btn-primary update-btn">Update</button>
+                        <button (click) = "deleteUser(user.id)" class="btn btn-danger delete-btn">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="display: flex; flex-direction: row; justify-content: center; margin-top: 1rem;"><a class="button-86" role="button" routerLinkActive="active" routerLink="create-book">List New Book</a></div>
+</div>
